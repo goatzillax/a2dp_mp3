@@ -6,7 +6,7 @@
 using namespace audio_tools;  
 
 //const char *startFilePath="/mp3_192k";
-const char *startFilePath="/mp3_32k";
+const char *startFilePath="/mp3_96k";
 const char* ext="mp3";
 
 AudioSourceLittleFS source(startFilePath, ext);
@@ -34,8 +34,6 @@ void setup() {
   auto cfg = out.defaultConfig(TX_MODE);
   cfg.name = "Totally Real Speaker";
   out.begin(cfg);
-
-  decoder.setMaxFrameSize(107);  //  improves 32k
 
   // setup player
   //player.setSilenceOnInactive(true);
